@@ -3,4 +3,4 @@ project(Raspberry_Sensor)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Raspberry_Sensor main.cpp)
+add_executable(Raspberry_Sensor main.cpp DHT.cpp DHT.hpp)
