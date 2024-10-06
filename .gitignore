@@ -1,0 +1,6 @@
+### C++ ###
+cmake-build-debug/
+main
+
+### CLion ###
+.idea/
