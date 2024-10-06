@@ -1,5 +1,5 @@
 ### C++ ###
-cmake-build-debug/
+cmake-build-*/
 main
 
 ### CLion ###
