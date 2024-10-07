@@ -4,7 +4,7 @@
 
 #define DHT11_Pin 0
 
-[[noreturn]] int main() {
+int main() {
 	DHT module;
 	int counts = 0;
 	while (true) {
@@ -20,4 +20,5 @@
 		printf("Humidity is %.2f %%, \t Temperature is %.2f *C\n\n", module.humidity, module.temperature);
 		delay(2000);
 	}
+	return 0;
 }
