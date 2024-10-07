@@ -95,11 +95,11 @@ int main(const int argc, char *argv[]) {
 void printHelp() {
 	std::cout << "Usage: myapp [options]\n"
 			<< "Options:\n"
-			<< "  -t, --temperature     If set, the temperature will be read\n"
-			<< "  -h, --humidity        If set, the humidity will be read\n"
-			<< "  -p, --pin             The pin number of the DHT11 sensor, default is 17\n"
-			<< "  -n, --number          The number of measurements to take, default is 1\n"
-			<< "  -d, --delay           The delay between measurements in seconds, default is 5\n"
-			<< "  -i, --infinite 	    If set, the measurements will be taken infinitely\n"
-			<< "      --help            Display this help message\n";
+			<< "  -t, --temperature   If set, the temperature will be read\n"
+			<< "  -h, --humidity      If set, the humidity will be read\n"
+			<< "  -p, --pin           The pin number of the DHT11 sensor, default is 17\n"
+			<< "  -n, --number        The number of measurements to take, default is 1\n"
+			<< "  -d, --delay         The delay between measurements in seconds, default is 5\n"
+			<< "  -i, --infinite      If set, the measurements will be taken infinitely\n"
+			<< "      --help          Display this help message\n";
 }
