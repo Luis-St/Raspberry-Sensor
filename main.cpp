@@ -6,7 +6,14 @@
 
 #define DHT11_Pin 17
 
+void printHelp();
+
 int main(const int argc, char *argv[]) {
+	if (argc == 1) {
+		printHelp();
+		return 0;
+	}
+
 	static struct option options[] = {
 		{"temperature", no_argument, nullptr, 't'},
 		{"humidity", no_argument, nullptr, 'h'},
@@ -58,15 +65,7 @@ int main(const int argc, char *argv[]) {
 		} else if (opt == 'i') {
 			infinite = true;
 		} else {
-			std::cout << "Usage: myapp [options]\n"
-					<< "Options:\n"
-					<< "  -t, --temperature  If set, the temperature will be read\n"
-					<< "  -h, --humidity     If set, the humidity will be read\n"
-					<< "  -p, --pin          The pin number of the DHT11 sensor, default is 17\n"
-					<< "  -n, --number       The number of measurements to take, default is 1\n"
-					<< "  -d, --delay        The delay between measurements in seconds, default is 5\n"
-					<< "  -i, --infinite 	 If set, the measurements will be taken infinitely\n"
-					<< "      --help         Display this help message\n";
+			printHelp();
 			return 1;
 		}
 	}
@@ -91,4 +90,16 @@ int main(const int argc, char *argv[]) {
 		}
 	}
 	return 0;
+}
+
+void printHelp() {
+	std::cout << "Usage: myapp [options]\n"
+			<< "Options:\n"
+			<< "  -t, --temperature  If set, the temperature will be read\n"
+			<< "  -h, --humidity     If set, the humidity will be read\n"
+			<< "  -p, --pin          The pin number of the DHT11 sensor, default is 17\n"
+			<< "  -n, --number       The number of measurements to take, default is 1\n"
+			<< "  -d, --delay        The delay between measurements in seconds, default is 5\n"
+			<< "  -i, --infinite 	 If set, the measurements will be taken infinitely\n"
+			<< "      --help         Display this help message\n";
 }
