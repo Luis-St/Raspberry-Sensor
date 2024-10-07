@@ -1,7 +1,7 @@
 #include "DHT.hpp"
 
 DHT::DHT() {
-	wiringPiSetup();
+	wiringPiSetupGpio();
 }
 
 int DHT::readSensor(const int pin, int wakeupDelay) {
@@ -20,7 +20,7 @@ int DHT::readSensor(const int pin, int wakeupDelay) {
 	pinMode(pin,INPUT);
 
 	int32_t loopCnt = DHTLIB_TIMEOUT;
-	int32_t t = micros();
+	unsigned int t = micros();
 	while (true) {
 		if (digitalRead(pin) == LOW) {
 			break;

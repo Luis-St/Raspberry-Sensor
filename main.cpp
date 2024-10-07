@@ -2,7 +2,7 @@
 #include <wiringPi.h>
 #include "DHT.hpp"
 
-#define DHT11_Pin 0
+#define DHT11_Pin 17
 
 int main() {
 	DHT module;
