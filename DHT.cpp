@@ -79,7 +79,7 @@ int DHT::readDHT11Once(const int pin) {
 		temperature = DHTLIB_INVALID_VALUE;
 		return rv;
 	}
-	humidity = bits[0];
+	humidity = bits[0] + bits[1] * 0.1;
 	temperature = bits[2] + bits[3] * 0.1;
 	if (const uint8_t sum = bits[0] + bits[1] + bits[2] + bits[3]; bits[4] != sum) {
 		return DHTLIB_ERROR_CHECKSUM;

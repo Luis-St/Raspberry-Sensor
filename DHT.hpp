@@ -17,12 +17,13 @@
 class DHT {
 public:
 	DHT();
-	double humidity, temperature;
+	double humidity{};
+	double temperature{};
 	int readDHT11Once(int pin);
 	int readDHT11(int pin);
 
 private:
-	uint8_t bits[5];
+	uint8_t bits[5]{};
 	int readSensor(int pin, int wakeupDelay);
 };
 
